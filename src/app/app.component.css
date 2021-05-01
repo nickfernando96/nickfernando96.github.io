@@ -1,6 +1,4 @@
-/*========================== HEADER ===========================*/
-
-    /*--------------------------- GLOBAIS E REPETIÇÕES-----------------------*/
+/* Header */
     
     header{
         background: white;
@@ -34,8 +32,6 @@
         display: none;
     }
 
-    /*-------------------------- FIM GLOBAIS E REPETIÇÕES -----------------------*/
-
     header section#topo > div {
         flex-direction: column;
         cursor: pointer;
@@ -51,7 +47,7 @@
         font-size: 13.5pt;
     }
 
-    header section#topo hr { /* Traços de separação de conteúdos no header */
+    header section#topo hr {
         margin: auto;
         border: none;
         background: #EDEFEF;
@@ -70,10 +66,8 @@
         text-align: center;
     }
 
-/* =========================== FIM HEADER ========================= */
-/*============================ NAVEGAÇÃO ===========================*/
+/*Ajustes e definições navegação desktop*/
 
-    /* ------------------------ NAVEGAÇÃO DESKTOP ------------------ */
     nav.invisivel-desk,
     header nav ul,
     header nav ul li{
@@ -106,9 +100,8 @@
         font-weight: 700;
         color: white;
     }
-    /* ---------------------- FIM NAVEGAÇÃO DESKTOP ------------------ */
 
-    /* ------------------------- NAVEGAÇÃO MOBILE ------------------ */
+/*Ajustes e definições navegação mobile*/
 
     header nav.invisivel-desk ul{
         display: flex;
@@ -149,17 +142,10 @@
         background: #18ACC4;
     }
 
-    /* ---------------------- FIM NAVEGAÇÃO MOBILE -------------------- */
 
-/*========================== FIM NAVEGAÇÃO ===========================*/
+/* Main */
 
-/*============================= FIM HEADER =========================*/
-
-
-/*=============================== MAIN =============================*/
-
-    /*-------------------------CAMINHO DO USUÁRIO-----------------------*/
-
+/* Usuario */
     main section#caminho-user {
         margin-top: 30px;
         margin-bottom: 40px;
@@ -188,9 +174,7 @@
         color: black;
     }
 
-    /*-----------------------FIM CAMINHO DO USUÁRIO-----------------------*/
-
-    /*--------------------------- NOME DA PÁGINA -------------------------*/
+/* Nome da pagina */
 
     main section#nomedapg h2 {
         font-size: 2em;
@@ -203,54 +187,48 @@
         margin-bottom: 40px;
     }
 
-    /*-------------------------- FIM NOME DA PÁGINA -----------------------*/
-
-    /*--------------------------- SELEÇÃO SEMESTRE ------------------------*/
+/* Sections seleção semestre*/
         
-        section#selecao-semestre{
-            display: flex;
-            justify-content: flex-end;
-            padding: 0;
-        }
+    section#selecao-semestre{
+        display: flex;
+        justify-content: flex-end;
+        padding: 0;
+    }
 
-        section#selecao-semestre div{
-            margin: 0;
-            padding: 0;
-            display: flex;
-            list-style: none;
-            flex-wrap: wrap;
-        }
+    section#selecao-semestre div{
+        margin: 0;
+        padding: 0;
+        display: flex;
+        list-style: none;
+        flex-wrap: wrap;
+    }
 
-        section#selecao-semestre button{
-            height: 36px;
-            width: 190px;
-            border: 2px solid #007A8D;
-            font-size: 16px;
-            text-decoration: none;
-            font-weight: 700;
-            color: #007A8D;
-            background: white;
-            outline: none;
-        }
+    section#selecao-semestre button{
+        height: 36px;
+        width: 190px;
+        border: 2px solid #007A8D;
+        font-size: 16px;
+        text-decoration: none;
+        font-weight: 700;
+        color: #007A8D;
+        background: white;
+        outline: none;
+    }
 
-        section#selecao-semestre button:hover {
-            color: white;
-            background: #007A8D;
-        }
+    section#selecao-semestre button:hover {
+        color: white;
+        background: #007A8D;
+    }
 
-        section#selecao-semestre div button:first-of-type{
-            border-radius: 6px 0 0 6px;
-        }
+    section#selecao-semestre div button:first-of-type{
+        border-radius: 6px 0 0 6px;
+    }
 
-        section#selecao-semestre div button:last-of-type{
-            border-radius: 0 6px 6px 0;
-        }
+    section#selecao-semestre div button:last-of-type{
+        border-radius: 0 6px 6px 0;
+    }
 
-    /*--------------------------- FIM SELEÇÃO SEMESTRE --------------------*/
-
-/*=============================== FIM MAIN ============================*/
-
-/*=============================== FOOTER ==============================*/
+/* Footer */
     
     footer section#contatos,
     footer section#contatos ul,
@@ -316,16 +294,12 @@
         text-align: center;
     }
 
-/*============================= FIM FOOTER ============================*/
-
-/*============================= MEDIAS QUERY ==========================*/
-
-    /* ------------ MIN WIDTH ---------- */
+/* Responsividade */
 
     @media (min-width:800px){
 
         header section#topo .invisivel-desk,
-        header section#topo div#logo + hr{ /* ELIMINA O SEGUNDO TRAÇO AO LADO DIREITO DA LOGO */
+        header section#topo div#logo + hr{
             display: none;
         }
 
@@ -357,25 +331,11 @@
             margin-left: 15px;
         }
         
-        /* ----------------- ADIÇÕES DE TEXTO ---------------- */
-        
-            header section#topo div#info-menu span:after {
-                display: block;
-                content: "Como funciona";
-            }
-
-            header section#topo div#login-menu span:after{
-                display: block;
-                content: "Nome Sobrenome";
-            }
-
-        /* ------------- FIM DA ADIÇÃO DE TEXTO -------------- */
-    
     }
 
     @media(min-width:1050px){
 
-        header section#topo div#whats{ /* FAZ APARECER AS INFORMAÇÕES DO WHATSAPP */
+        header section#topo div#whats{
             display: flex;
             flex: 1.2;
             justify-content: center;
@@ -409,10 +369,6 @@
         }
         
     }
-    
-    /* ---------- FIM MIN WIDTH -------- */
-
-    /* ------------ MAX WIDHT --------- */
 
     @media(max-width:900px){
 
@@ -457,7 +413,7 @@
 
     @media (max-width:1150px) {
         
-        footer .invisivel-mobile {
+        .invisivel-mobile {
             display: none;
         }
 
@@ -499,14 +455,8 @@
             text-transform: uppercase;
         }
 
-        /* ---------------- ADIÇÃO DE TEXTO ---------------- */
-
-            footer h2#numero + p::after{
-                content: "Segunda a sexta de 8h às 22h";
-            }
-
-        /* --------------- FIM ADIÇÃO DE TEXTO ------------- */
+        footer h2#numero + p::after{
+            content: "Segunda a sexta de 8h às 22h";
+        }
 
     }
-    
-    /* --------- FIM MAX WIDHT -------- */

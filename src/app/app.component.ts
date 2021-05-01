@@ -24,27 +24,25 @@ export class AppComponent implements OnInit{
   objetosJson: Array<cursos> = [];
   //Array de copia para validações
   objetoJsonDefault: Array<cursos> = [];
-
+  //Array de id de bolsas selecionadas para inclusão
   objJsonIncluir: Array<any> = [];
-  
+  //Array de bolsas marcadas como favoritas e listadas na tela inicial
   objFavoritos: Array<cursos> = [];
   //Array de cidades do db.json para o select no html
   opcoes_cidade = [];
-  //Array filtrado
-  opcoes_cidade_filtrado = [];
   //Array de cursos do db.json para o select no html
   opcoes_curso = [];
-  //Array filtrado
-  opcoes_curso_filtrado = [];
 
   
   constructor(private appLerDbJson : AppLerDbJson) { }
 
+  //Metodos executados logo ao carregar a pagina
   ngOnInit(){
     this.lerJsonDb();
     this.lerLocalStorage();
   }
 
+  //Click para abrir o modal
   onClickAbrirModal(){
     const body = document.querySelector('html');
     const modal = document.getElementById('background-modal');
@@ -54,6 +52,7 @@ export class AppComponent implements OnInit{
     this.marcaBolsasAdicionadasAntes();
   }
 
+  //Click para fechar o modal
   onClickFecharModal(){
     const modal = document.getElementById('background-modal');
     const body = document.querySelector('html');
@@ -62,6 +61,7 @@ export class AppComponent implements OnInit{
     this.valoresPadrao();
   }
 
+  //Click no checkbox da bolsa escolhida
   onClickCheckboxBolsa(id){
     let item = id;
     if (this.objJsonIncluir.includes(item)) {
@@ -81,6 +81,7 @@ export class AppComponent implements OnInit{
     this.travaButtonAdd();
   }
   
+  //Click para salvar bolsas no array de favoritas
   onClickAddBolsas(){
     for(let i = 0; i < this.objJsonIncluir.length; i++){
       const id: string = '#' + this.objJsonIncluir[i];
@@ -95,6 +96,7 @@ export class AppComponent implements OnInit{
     this.salvaLocalStore();
   }
 
+  //Click para excluir bolsas do array
   onClickExcluirBolsas(id){
     const objFav = this.objFavoritos[id];
     this.objFavoritos.splice(id,1);
@@ -106,6 +108,7 @@ export class AppComponent implements OnInit{
     this.salvaLocalStore();
   }
 
+  //Click para filtrar semetre pelos 3 botoes na tela inicial
   onClickFiltraSemestre(nBtn){
     this.lerLocalStorage();
     document.getElementById('todos_semestres').classList.remove('selecao-atual');
@@ -122,6 +125,7 @@ export class AppComponent implements OnInit{
     }    
   }
   
+  //Filtro dinamico que monta lista de bolsas que aparecem conforme todos os campos na tela
   onChangeFilter(campo){
     //Refaz o Array seguindo uma copia
     this.objetosJson = this.objetoJsonDefault;
@@ -133,6 +137,7 @@ export class AppComponent implements OnInit{
     this.filtrarPreco();
   }
 
+  //Faz leitura do localstorage caso já tenha preenche com os dados
   lerLocalStorage(){
     this.objFavoritos = [];
     if (localStorage.hasOwnProperty("bolsasFav")) {
@@ -140,10 +145,12 @@ export class AppComponent implements OnInit{
     }
   }
 
+  //Salva array de bolsasFavoritas no localstorage
   salvaLocalStore(){
     localStorage.setItem("bolsasFav",JSON.stringify(this.objFavoritos));
   }
 
+  //Service de Leitura do arquivo db.json
   lerJsonDb(){
     this.appLerDbJson.getJSON().subscribe(
       (response) => {
@@ -152,6 +159,7 @@ export class AppComponent implements OnInit{
       }); 
   }
 
+  //Cria Array conforme resposta da leitura do json
   listaobj(resp){
     this.objetosJson = resp;
     this.objetosJson.sort((a, b) => (a.university.name < b.university.name) ? -1 : 1);
@@ -163,7 +171,7 @@ export class AppComponent implements OnInit{
     this.fazerListaCursos();
   }
 
-
+  //Marca o checkbox de bolsas ja adicionadas antes para evitar duplicidade no array quando for salvar
   marcaBolsasAdicionadasAntes(){
     this.lerLocalStorage();
     this.objFavoritos.forEach(element => {
@@ -171,9 +179,9 @@ export class AppComponent implements OnInit{
       $(id).prop('checked', true);
       $(id).prop('disabled', true);
     });
-
   }
 
+  //Trava o Botão de adicionar para não incluir quando não tiver nada selecionado
   travaButtonAdd(){
     if(this.objJsonIncluir.length > 0){
       this.travaButton = false;
@@ -182,34 +190,29 @@ export class AppComponent implements OnInit{
     }
   }
 
+  //Monta a lista de cidades conforme db.json
   fazerListaCidades() {
     this.opcoes_cidade = [];
     for (let i = 0; i < this.objetosJson.length; i++) {
       this.opcoes_cidade.push(this.objetosJson[i].campus.city);
     }
-    this.filtrarRepeticoes();
+
+    //Filtra repetições
+    this.opcoes_cidade = this.opcoes_cidade.filter((e,i)=>this.opcoes_cidade.indexOf(e) === i);
   }
 
-  filtrarRepeticoes() {
-    this.opcoes_cidade_filtrado = [];
-    var arr = this.opcoes_cidade;
-    this.opcoes_cidade_filtrado = arr.filter((e, i) => arr.indexOf(e) === i);
-  }
-
+  //Monta a lista de cursos conforme db.json
   fazerListaCursos() {
     this.opcoes_curso = [];
     for (let i = 0; i < this.objetosJson.length; i++) {
       this.opcoes_curso.push(this.objetosJson[i].course.name)
     }
-    this.filtrarRepeticoesCursos();
+
+    //Filtra repetições
+    this.opcoes_curso = this.opcoes_curso.filter((e, i) => this.opcoes_curso.indexOf(e) === i);
   }
   
-  filtrarRepeticoesCursos() {
-    this.opcoes_curso_filtrado = [];
-    var arrCursos = this.opcoes_curso;
-    this.opcoes_curso_filtrado = arrCursos.filter((e, i) => arrCursos.indexOf(e) === i);
-  }
-
+  //Filtra conforme campos de cidade e curso as bolsas que aparecem
   filtraCidadesCursos(){
     const city = this.cidade;
     const course = this.curso;
@@ -224,6 +227,7 @@ export class AppComponent implements OnInit{
     }
   }
 
+  //Filtra conforme campos de Presencial e Ead as bolsas que aparecem
   filtraModalidade(){
     if (this.isChecked == false && this.isCheckedEad == true){
       this.objetosJson = this.objetosJson.filter(obj => obj.course.kind == 'EaD');
@@ -234,11 +238,13 @@ export class AppComponent implements OnInit{
     }
   }
 
+  //Filtra conforme campo range de preço as bolsas que aparecem
   filtrarPreco(){
     document.getElementById('valor-pd-pgar').innerHTML = "R$ "+this.rangePagar;
     this.objetosJson = this.objetosJson.filter(obj => this.rangePagar>=obj.price_with_discount);    
   }
 
+  //Restaura valores default
   valoresPadrao(){
     this.rangePagar = 1500;
     document.getElementById('valor-pd-pgar').innerHTML = "R$ 1500";

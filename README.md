@@ -1,27 +1,30 @@
-# QueroBolsaTest
+# Front End Challenge of Quero Educação
+## Favorite Scholarships
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.3.
 
-## Development server
+## Introduction
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+>* This project was developed for challenge Quero Educação.
+>* This's the front-end of project.
+>* The project was made using HTML, CSS, JavaScript, TypeScript, jQuery.
 
-## Code scaffolding
+## Execution
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+>* I made upload this project in GitHub pages for more practicality.
+>* See more in [BolsasFavoritas](https://nickfernando96.github.io/nickfernando96.github.io/)
 
-## Build
+## Installation
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+>* First, clone this repository or download
+>* Install all dependencies using 'npm install --dev' and 'npm install'
+>* To run, execute the command `ng serve`
 
-## Running unit tests
+## Good Programming Practices
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+>* Mobile First
+>* Intuitive Variables and Methods
+>* Unsed negative condition in IF
+>* Code commented
+>* Clean code
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

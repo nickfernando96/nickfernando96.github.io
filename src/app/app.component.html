@@ -1,307 +1,271 @@
 <header>
-  <section id="topo" class="container">
+  	<section id="topo" class="container">
+		<div id="info-menu">
+			<img src="../assets/imgs/info-blue.png" alt="">
+			<span class="invisivel-desk">Ajuda</span>
+			<span class="invisivel-mobile">Como funciona</span>
+		</div>
 
-    <div id="info-menu">
+		<hr>
 
-      <img src="../assets/imgs/info-blue.png" alt="">
-      <span class="invisivel-desk">Ajuda</span>
-      <span><!--Conteúdo via CSS, app.component.css--></span>
+		<div id="whats">
+			<img src="../assets/imgs/whats.png" alt="">
+			<div>
+				<span>0800 123 2222</span>
+				<span class="complemento">Envie mensagem ou ligue</span>
+			</div>
+		</div>
 
-    </div>
-	
+		<div id="logo">
+			<h1>Quero Bolsa</h1>
+			<img src="../assets/imgs/logo-querobolsa.png" alt="">
+		</div>
 
-    <hr>
-    
-    <div id="whats">
+		<hr>
 
-      <img src="../assets/imgs/whats.png" alt="">
-      <div>
-        <span>0800 123 2222</span>
-        <span class="complemento">Envie mensagem ou ligue</span>
-      </div>
+		<div id="login-menu">
+			<span class="invisivel-desk">Conta</span>
+			<span class="invisivel-mobile">Nome Sobrenome</span>
+			<img src="../assets/imgs/user.png" alt="">
+		</div>
 
-    </div>
+	</section>
 
-    <div id="logo">
-      <h1>Quero Bolsa</h1>
-      <img src="../assets/imgs/logo-querobolsa.png" alt="">
-    </div>
+	<nav class="visivel-desk">
+		<ul class="container">
+			<li><a href="">Minha Conta</a></li>
+			<li><a href="">Pré-matrículas</a></li>
+			<li class="selecao-atual"><a href="">Bolsas favoritas</a></li>
+		</ul>
+	</nav>
 
-    <hr>
-
-    <div id="login-menu">
-      <span class="invisivel-desk">Conta</span>
-      <span><!--Conteúdo via CSS, app.component.css --></span>
-      <img src="../assets/imgs/user.png" alt="">
-    </div>
-
-  </section>
-
-  <nav class="visivel-desk">
-    <ul class="container">
-      <li><a href="">Minha Conta</a></li>
-      <li><a href="">Pré-matrículas</a></li>
-      <li class="selecao-atual"><a href="">Bolsas favoritas</a></li>
-    </ul>
-  </nav>
-
-  <nav class="invisivel-desk">
-    <ul class="container">
-      <li><a href="">Minha Conta</a></li>
-      <li>
-        <select name="Menu">
-          <option selected>Menu</option>
-        </select>
-      </li>
-    </ul>
-  </nav>
+	<nav class="invisivel-desk">
+		<ul class="container">
+			<li>
+				<a href="">Minha Conta</a>
+			</li>
+			<li>
+				<select name="Menu">
+					<option selected>Menu</option>
+				</select>
+			</li>
+		</ul>
+	</nav>
 </header>
 
 <main class="container">
     <section id="caminho-user">
-      <nav>
-        <ul>
-          <li>
-            <a href="">
-              <span>Home</span>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <span>/ Minha conta/</span>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <span> Bolsas favoritas</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </section>
-    <section id="nomedapg">
-			<h2>Bolsas favoritas</h2>
-			<p>
-				Adicione bolsas de cursos e faculdades do seu interesse e
-				receba atualizações com as melhores ofertas disponíveis.
-			</p>
-		</section>
-    <section id="selecao-semestre">
-			<div>
-				<button id="todos_semestres" class="selecao-atual" (click)="onClickFiltraSemestre('0')">  Todos os semestres </button>
-				<button id="segundo-semestre" (click)="onClickFiltraSemestre('1')"> 2º semestre de 2019</button>
-				<button id="primeiro-semestre" (click)="onClickFiltraSemestre('2')"> 1º semestre de 2020</button>
-			</div>
-		</section>
-    <section id="bolsas">
-			<div id="cx_add_bolsa" (click)="onClickAbrirModal()" >
-				<div>
-					<img src="../assets/imgs/more.png" alt="">
-					<h2>Adicionar bolsa</h2>
-					<p>Clique para adicionar bolsas de </p>
-					<p>cursos do seu interesse</p>
-				</div>
-			</div>
-
-			<div class="cx_bolsa_adicionada" *ngFor="let bolsafav of objFavoritos; let id = index">
-				
-				<div class="superior">
-					<img src="{{bolsafav?.university.logo_url}}" alt="">
-
-					<span class="nome-universidade">
-						{{bolsafav?.university.name}}
-					</span>
-					<span class="nome-curso">
-						{{bolsafav?.course.name}}
-					</span>
-					<div class="avaliacao">
-						<span class="nota-universidade">
-							{{bolsafav?.university.score}}
-						</span>
-						<span class="estrelas-facul">
-							<span class="cor-estrela"></span>
-							<img src="../assets/imgs/estrelas.png" alt="">
-						</span>
-					</div>
-				</div>
-			
-				<div class="central">
-					<div>
-						<span class="tipo-curso"> {{bolsafav?.course.kind}} </span>
-						<span class="periodo">{{bolsafav?.course.shift}}</span>
-					</div>
-					<span class="inicio-aulas">Início das aulas em: </span>
-					<span class="data-inicio">{{bolsafav?.start_date}}</span>
-				</div>
-			
-				<div class="inferior">
-					<span class="situacao-bolsa">Mensalidade com o Quero Bolsa:</span>
-					<span class="preco-bruto">{{bolsafav?.full_price}}</span>
-					<span class="preco-cdesconto">{{bolsafav?.price_with_discount}}</span>
-				</div>
-			
-				<div class="botoes">
-					<button class="botao-excluir" (click)="onClickExcluirBolsas(id)">
-						Excluir
-					</button>
-					<button class="ver-oferta"  *ngIf="bolsafav?.enabled == true">Ver Oferta</button>
-          <button class="indisponivel"  *ngIf="bolsafav?.enabled == false">Indisponível</button>
-				</div>
-
-			</div>
-
-		</section>
-
-	</main>
-
-	<footer>
-		<section id="contatos">
+		<nav>
 			<ul>
-				<li id="cxwhats-mobile">
-					<img src="../assets/imgs/whats-white.png" alt="">
-
-					<div>
-						<h2 id="numero">0800 123 2222</h2>
-						<p><span class="invisivel-mobile">Seg - Sex 8h-22h</span></p>
-					</div>
-				</li>
-
 				<li>
-					<img src="../assets/imgs/comments.png" alt="">
-
-					<div>
-						<h2 id="chat">Chat <span class="invisivel-mobile"> ao vivo </span></h2>
-						<p class="invisivel-mobile">Seg - Sex 8h-22h</p>
-					</div>
-
+					<a href="">
+					<span>Home</span>
+					</a>
 				</li>
-
-				<li id="cx-email">
-					<img src="../assets/imgs/email.png" alt="">
-					<div>
-						<h2 id="email"><span class="invisivel-mobile"> Mande um </span>e-mail</h2>
-						<p class="invisivel-mobile">Respondemos rapidinho</p>
-					</div>
-
-				</li>
-
 				<li>
-					<img src="../assets/imgs/info-white.png" alt="">
-
-					<div>
-						<h2 id="ajuda"><span class="invisivel-mobile"> Central de </span>ajuda</h2>
-						<p class="invisivel-mobile">Encontre todas as respostas</p>
-					</div>
+					<a href="">
+					<span>/ Minha conta/</span>
+					</a>
+				</li>
+				<li>
+					<a href="">
+					<span> Bolsas favoritas</span>
+					</a>
 				</li>
 			</ul>
-		</section>
-    <section id="mensagem">
-			<span>Feito com ♡ pela Quero Educação</span>
-		</section>
+		</nav>
+    </section>
+    <section id="nomedapg">
+		<h2>Bolsas favoritas</h2>
+		<p>
+			Adicione bolsas de cursos e faculdades do seu interesse e
+			receba atualizações com as melhores ofertas disponíveis.
+		</p>
+	</section>
+    <section id="selecao-semestre">
+		<div>
+			<button id="todos_semestres" class="selecao-atual" (click)="onClickFiltraSemestre('0')">  Todos os semestres </button>
+			<button id="segundo-semestre" (click)="onClickFiltraSemestre('1')"> 2º semestre de 2019</button>
+			<button id="primeiro-semestre" (click)="onClickFiltraSemestre('2')"> 1º semestre de 2020</button>
+		</div>
+	</section>
+    <section id="bolsas">
+		<div id="cx_add_bolsa" (click)="onClickAbrirModal()" >
+			<div>
+				<img src="../assets/imgs/more.png" alt="">
+				<h2>Adicionar bolsa</h2>
+				<p>Clique para adicionar bolsas de </p>
+				<p>cursos do seu interesse</p>
+			</div>
+		</div>
 
-	</footer>
-
-  <!--Modal-->
-	<section id="background-modal">
-
-		<div id="cx-modal">
-			<button id="botao-fechar" (click)="onClickFecharModal()">✕</button>
-
-			<h2>Adicionar bolsa</h2>
-			<h3>Filtre e adicione as bolsas de seu interesse</h3>
-			
-			<section id="filtros">
+		<div class="cx_bolsa_adicionada" *ngFor="let bolsafav of objFavoritos; let id = index">
+			<div class="superior">
+				<img src="{{bolsafav?.university.logo_url}}" alt="">
+				<span class="nome-universidade">{{bolsafav?.university.name}}</span>
+				<span class="nome-curso">{{bolsafav?.course.name}}</span>
+				<div class="avaliacao">
+					<span class="nota-universidade">{{bolsafav?.university.score}}</span>
+					<span class="estrelas-facul">
+						<span class="cor-estrela"></span>
+						<img src="../assets/imgs/estrelas.png" alt="">
+					</span>
+				</div>
+			</div>
+		
+			<div class="central">
 				<div>
-					<label for="selecione-cidade">selecione sua cidade</label>
-          <select name="selecione-cidade" id="selecione_cidade" type="string" [(ngModel)]="cidade" (change)="onChangeFilter(cidade)" >
-            <option value=""></option>
-            <option [ngValue]="item" *ngFor="let item of opcoes_cidade_filtrado">
-              {{item}}
-            </option>
-        </select>
+					<span class="tipo-curso"> {{bolsafav?.course.kind}} </span>
+					<span class="periodo">{{bolsafav?.course.shift}}</span>
+				</div>
+				<span class="inicio-aulas">Início das aulas em: </span>
+				<span class="data-inicio">{{bolsafav?.start_date}}</span>
+			</div>
+		
+			<div class="inferior">
+				<span class="situacao-bolsa">Mensalidade com o Quero Bolsa:</span>
+				<span class="preco-bruto">{{bolsafav?.full_price}}</span>
+				<span class="preco-cdesconto">{{bolsafav?.price_with_discount}}</span>
+			</div>
+		
+			<div class="botoes">
+				<button class="botao-excluir" (click)="onClickExcluirBolsas(id)">Excluir</button>
+				<button class="ver-oferta"  *ngIf="bolsafav?.enabled == true">Ver Oferta</button>
+				<button class="indisponivel"  *ngIf="bolsafav?.enabled == false">Indisponível</button>
+			</div>
+		</div>
+	</section>
+</main>
+
+<footer>
+	<section id="contatos">
+		<ul>
+			<li id="cxwhats-mobile">
+				<img src="../assets/imgs/whats-white.png" alt="">
+				<div>
+					<h2 id="numero">0800 123 2222</h2>
+					<p><span class="invisivel-mobile">Seg - Sex 8h-22h</span></p>
+				</div>
+			</li>
+
+			<li>
+				<img src="../assets/imgs/comments.png" alt="">
+
+				<div>
+					<h2 id="chat">Chat <span class="invisivel-mobile"> ao vivo </span></h2>
+					<p class="invisivel-mobile">Seg - Sex 8h-22h</p>
+				</div>
+
+			</li>
+
+			<li id="cx-email">
+				<img src="../assets/imgs/email.png" alt="">
+				<div>
+					<h2 id="email"><span class="invisivel-mobile"> Mande um </span>e-mail</h2>
+					<p class="invisivel-mobile">Respondemos rapidinho</p>
+				</div>
+			</li>
+
+			<li>
+				<img src="../assets/imgs/info-white.png" alt="">
+
+				<div>
+					<h2 id="ajuda"><span class="invisivel-mobile"> Central de </span>ajuda</h2>
+					<p class="invisivel-mobile">Encontre todas as respostas</p>
+				</div>
+			</li>
+		</ul>
+	</section>
+	<section id="mensagem">
+		<span>Feito com ♡ pela Quero Educação</span>
+	</section>
+</footer>
+
+<!--Modal-->
+<section id="background-modal">
+
+	<div id="cx-modal">
+		<button id="botao-fechar" (click)="onClickFecharModal()">✕</button>
+
+		<h2>Adicionar bolsa</h2>
+		<h3>Filtre e adicione as bolsas de seu interesse</h3>
+		
+		<section id="filtros">
+			<div>
+				<label for="selecione-cidade">selecione sua cidade</label>
+				<select name="selecione-cidade" id="selecione_cidade" type="string" [(ngModel)]="cidade" (change)="onChangeFilter(cidade)" >
+					<option value=""></option>
+					<option [ngValue]="item" *ngFor="let item of opcoes_cidade">
+					{{item}}
+					</option>
+				</select>
 					
-				</div>
-			
-				<div>
-					<label for="selecione-curso">selecione o curso de sua preferência</label>
-					<select name="selecione-curso" id="selecione_curso" type="string" [(ngModel)]="curso" (change)="onChangeFilter(curso)">
-						<option value=""></option>
-            <option [ngValue]="item" *ngFor="let item of opcoes_curso_filtrado">
-              {{item}}
-            </option>
-					</select>
-				</div>
-
-				<div id="tipo-curso">
-					<label for="modalidade">Como você quer estudar?</label>
-
-					<div>
-						<div id="cx-presencial">
-							<input type="checkbox" name="presencial" id="modalidade_presencial" [(ngModel)]="isChecked" (change)="onChangeFilter(isChecked)" >
-							<label for="modalidade_presencial">Presencial</label>
-						</div>
-
-						<div id="cx-distancia">
-							<input type="checkbox" name="distancia" id="modalidade_distancia" [(ngModel)]="isCheckedEad" (change)="onChangeFilter(isCheckedEad)">
-							<label for="modalidade_distancia">À distância</label>
-						</div>
-					</div>	
-
-				</div>
-
-				<div id="selecao-pode-pagar">
-					<label for="range">Até quanto pode pagar?</label>
-					<span id="valor-pd-pgar">R$ 1500</span>
-					<input type="range" id="range-pd-pagar" min="200" max="1500" step="50" [value]="rangePagar" [(ngModel)]="rangePagar" (change)="onChangeFilter(rangePagar)">
-				</div>
-
-				<div id="topo-resultados">
-					<h2>Resultado:</h2>
-					<div>
-						<span>Ordenar por</span>
-						<select name="Ordenar por" id="Ordenar_por">
-							<option value="" selected>Nome da Faculdade</option>
-						</select>
-					</div>
-				</div>
-
-			</section>
-			
-			<section id="resultados">
-
-				<div class="faculdades" *ngFor="let itens of objetosJson">
-
-          <input type="checkbox" class="form-check-input" [attr.id]="itens?.id" (click)="onClickCheckboxBolsa(itens?.id)">         
-					<label for="checkbox-facul">
-
-						<img src="{{itens?.university.logo_url}}" alt="logo da faculdade">
-
-						<div>
-							
-							<div>
-								<span id="curso">{{itens?.course.name}}</span>
-								<span id="formacao">{{itens?.course.level}}</span>
-							</div>
-
-							<div>
-								<span id="bolsa">{{itens?.discount_percentage}}</span>
-								<span id="preco">{{itens?.price_with_discount}}</span>
-							</div>
-
-						</div>
-					</label>
-				</div> 
-
-			</section>
-
-			<div id="botoes">
-				<button id="cancelar" (click)="onClickFecharModal()">Cancelar</button>
-				<button id="buttonAddBolsa" [disabled]="travaButton" type="submit" (click)="onClickAddBolsas()">Adicionar bolsa(s)</button>
+			</div>
+			<div>
+				<label for="selecione-curso">selecione o curso de sua preferência</label>
+				<select name="selecione-curso" id="selecione_curso" type="string" [(ngModel)]="curso" (change)="onChangeFilter(curso)">
+					<option value=""></option>
+					<option [ngValue]="item" *ngFor="let item of opcoes_curso">
+					{{item}}
+					</option>
+				</select>
 			</div>
 
-		</div>
+			<div id="tipo-curso">
+				<label for="modalidade">Como você quer estudar?</label>
+				<div>
+					<div id="cx-presencial" class="form-check-flex">
+						<input type="checkbox" name="presencial" class="form-check-input" [(ngModel)]="isChecked" (change)="onChangeFilter(isChecked)">
+						<label>Presencial</label>
+					</div>
+					<div id="cx-distancia" class="form-check-flex">
+						<input type="checkbox" name="distancia" class="form-check-input" [(ngModel)]="isCheckedEad" (change)="onChangeFilter(isCheckedEad)">
+						<label>À distância</label>
+					</div>
+				</div>	
+			</div>
+			<div id="selecao-pode-pagar">
+				<label for="range">Até quanto pode pagar?</label>
+				<span id="valor-pd-pgar">R$ 1500</span>
+				<input type="range" id="range-pd-pagar" min="200" max="1500" step="50" [value]="rangePagar" [(ngModel)]="rangePagar" (change)="onChangeFilter(rangePagar)">
+			</div>
+			<div id="topo-resultados">
+				<h2>Resultado:</h2>
+				<div>
+					<span>Ordenar por</span>
+					<select name="Ordenar por" id="Ordenar_por">
+						<option value="" selected>Nome da Faculdade</option>
+					</select>
+				</div>
+			</div>
+		</section>
 		
-	</section>
-	 
+		<section id="resultados">
+			<div class="faculdades" *ngFor="let itens of objetosJson">
+				<input type="checkbox" class="form-check-input" [attr.id]="itens?.id" (click)="onClickCheckboxBolsa(itens?.id)">         
+				<label for="checkbox-facul">
+					<img src="{{itens?.university.logo_url}}" alt="logo da faculdade">
+					<div>
+						<div>
+							<span id="curso">{{itens?.course.name}}</span>
+							<span id="formacao">{{itens?.course.level}}</span>
+						</div>
+
+						<div>
+							<span id="bolsa"><span style="font-weight: lighter">Bolsa de </span>{{itens?.discount_percentage}}%</span>
+							<span id="preco">R$ {{itens?.price_with_discount}}/mes</span>
+						</div>
+
+					</div>
+				</label>
+			</div>
+		</section>
+
+		<div id="botoes">
+			<button id="cancelar" (click)="onClickFecharModal()">Cancelar</button>
+			<button id="buttonAddBolsa" [disabled]="travaButton" type="submit" (click)="onClickAddBolsas()">Adicionar bolsa(s)</button>
+		</div>
+	</div>
+</section>
 
 <router-outlet></router-outlet>
