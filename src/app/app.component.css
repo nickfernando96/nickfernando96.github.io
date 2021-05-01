@@ -1,0 +1,512 @@
+/*========================== HEADER ===========================*/
+
+    /*--------------------------- GLOBAIS E REPETIÇÕES-----------------------*/
+    
+    header{
+        background: white;
+    }
+
+    header section#topo *{
+        color: #007A8D;
+    }
+
+    header section#topo > div img,
+    header section#topo > div#info-menu,
+    header section#topo div#logo img,
+    header section#topo > div#login-menu{
+        padding: 0;
+    }
+
+    header section#topo,
+    header section#topo > div{
+        display: flex;
+    }
+
+    header section#topo > div,
+    header section#topo > div#info-menu,
+    header section#topo > div#login-menu{
+        align-items: center;
+        justify-content: center;
+    }
+
+    header section#topo div#whats,
+    header section#topo div#logo h1{
+        display: none;
+    }
+
+    /*-------------------------- FIM GLOBAIS E REPETIÇÕES -----------------------*/
+
+    header section#topo > div {
+        flex-direction: column;
+        cursor: pointer;
+    }
+
+    header section#topo > div img{
+        width: 32px;
+        height: 32px;
+    }
+
+    header section#topo div span{
+        font-weight: 700;
+        font-size: 13.5pt;
+    }
+
+    header section#topo hr { /* Traços de separação de conteúdos no header */
+        margin: auto;
+        border: none;
+        background: #EDEFEF;
+        width: 4px;
+        height: 47px;
+    }
+
+    header section#topo div#logo img {
+        height: 71px;
+        width: 132px;
+        margin: 0 0 5px 0;
+    }
+    
+    header section#topo > div#login-menu{
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+/* =========================== FIM HEADER ========================= */
+/*============================ NAVEGAÇÃO ===========================*/
+
+    /* ------------------------ NAVEGAÇÃO DESKTOP ------------------ */
+    nav.invisivel-desk,
+    header nav ul,
+    header nav ul li{
+        display: flex;
+    }
+
+    nav.visivel-desk{
+        display: none;
+    }
+
+    header nav {
+        background: #18ACC4;
+    }
+
+    header nav ul{
+        padding: 0px;
+    }
+
+    header nav ul li{
+        padding: 12px 15px;
+        cursor: pointer;
+    }
+
+    header nav ul li:hover {
+        background:#007A8D;
+    }
+
+    header nav ul li a {
+        text-decoration: none;
+        font-weight: 700;
+        color: white;
+    }
+    /* ---------------------- FIM NAVEGAÇÃO DESKTOP ------------------ */
+
+    /* ------------------------- NAVEGAÇÃO MOBILE ------------------ */
+
+    header nav.invisivel-desk ul{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    header nav.invisivel-desk li{
+        justify-content: left;
+        padding-left: 0;
+    }
+
+    header nav.invisivel-desk li + li {
+        width: 80px;
+        padding: 0;
+        background: url("../assets/imgs/seta-pbaixo-branca.png") no-repeat right;
+    }
+
+    header nav.invisivel-desk select,
+    header nav.invisivel-desk select option{
+        font-weight: bold;
+        font-size: 16px;
+        color: white;
+        outline: none;
+    }
+
+    header nav.invisivel-desk select{
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        width: auto;
+        background: transparent;
+        border: 0;
+    }
+
+    header nav.invisivel-desk select option{
+        width: 900px;
+        background: #18ACC4;
+    }
+
+    /* ---------------------- FIM NAVEGAÇÃO MOBILE -------------------- */
+
+/*========================== FIM NAVEGAÇÃO ===========================*/
+
+/*============================= FIM HEADER =========================*/
+
+
+/*=============================== MAIN =============================*/
+
+    /*-------------------------CAMINHO DO USUÁRIO-----------------------*/
+
+    main section#caminho-user {
+        margin-top: 30px;
+        margin-bottom: 40px;
+        font-size: 1.1em;
+    }
+
+    main section#caminho-user ul {
+        padding: 0;
+        margin: 0;
+    }
+
+    main section#caminho-user ul li{
+        display: inline;
+        list-style: none;
+    }
+
+    main section#caminho-user a,
+    main section#caminho-user a span {
+        text-decoration: none;
+        font-weight: 700;
+        color: #007A8D;
+    }
+
+    main section#caminho-user ul li:last-child a span{
+        font-weight: normal;
+        color: black;
+    }
+
+    /*-----------------------FIM CAMINHO DO USUÁRIO-----------------------*/
+
+    /*--------------------------- NOME DA PÁGINA -------------------------*/
+
+    main section#nomedapg h2 {
+        font-size: 2em;
+        margin-bottom: 10px;
+        margin-top: 0;
+    }
+
+    main section#nomedapg p{
+        font-size: 1.2em;
+        margin-bottom: 40px;
+    }
+
+    /*-------------------------- FIM NOME DA PÁGINA -----------------------*/
+
+    /*--------------------------- SELEÇÃO SEMESTRE ------------------------*/
+        
+        section#selecao-semestre{
+            display: flex;
+            justify-content: flex-end;
+            padding: 0;
+        }
+
+        section#selecao-semestre div{
+            margin: 0;
+            padding: 0;
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        section#selecao-semestre button{
+            height: 36px;
+            width: 190px;
+            border: 2px solid #007A8D;
+            font-size: 16px;
+            text-decoration: none;
+            font-weight: 700;
+            color: #007A8D;
+            background: white;
+            outline: none;
+        }
+
+        section#selecao-semestre button:hover {
+            color: white;
+            background: #007A8D;
+        }
+
+        section#selecao-semestre div button:first-of-type{
+            border-radius: 6px 0 0 6px;
+        }
+
+        section#selecao-semestre div button:last-of-type{
+            border-radius: 0 6px 6px 0;
+        }
+
+    /*--------------------------- FIM SELEÇÃO SEMESTRE --------------------*/
+
+/*=============================== FIM MAIN ============================*/
+
+/*=============================== FOOTER ==============================*/
+    
+    footer section#contatos,
+    footer section#contatos ul,
+    footer section#contatos li,
+    footer section#mensagem {
+        display: flex;
+    }
+
+    footer{
+        margin-top:20%;
+        display: block
+    }
+
+    footer *{
+        color: white;
+    }
+
+    footer section#contatos {
+        background: #007A8D;
+    }
+
+    footer section#contatos ul{
+        margin: 0 5%;
+        width: 100%;
+        padding: 0;
+    }
+
+    footer section#contatos li{
+        flex: 1;
+        list-style: none;
+        align-items: center;
+        padding: 35px;
+        cursor: pointer;
+    }
+
+    footer section#contatos li img {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        margin-right: 15px;
+        text-align: center;
+    }
+
+    footer section#contatos li div h2 {
+        font-style: normal;
+        margin:0;
+        font-size: 21px;
+        display: inline-block;
+    }
+
+    footer section#contatos li div p {
+        margin:0;
+    }
+
+    footer section#mensagem{
+        height: 120px;
+        background:#18ACC4;
+    }
+
+    footer section#mensagem span{
+        margin: auto;
+        font-weight: 700;
+        text-align: center;
+    }
+
+/*============================= FIM FOOTER ============================*/
+
+/*============================= MEDIAS QUERY ==========================*/
+
+    /* ------------ MIN WIDTH ---------- */
+
+    @media (min-width:800px){
+
+        header section#topo .invisivel-desk,
+        header section#topo div#logo + hr{ /* ELIMINA O SEGUNDO TRAÇO AO LADO DIREITO DA LOGO */
+            display: none;
+        }
+
+        header section#topo > div{
+            justify-content: auto;
+            align-items: center;
+            flex-direction: row;
+        }
+
+        header section#topo div img {
+            margin-right: 15px;
+        }
+
+        header section#topo > div#info-menu {
+            justify-content: left;
+            padding: 0;
+            flex: 1;
+        }
+
+        header section#topo div#logo{
+            flex: 1.8;
+        }
+
+        header section#topo > div#login-menu{
+            flex-direction: row;
+        }
+
+        header section#topo div#login-menu img{
+            margin-left: 15px;
+        }
+        
+        /* ----------------- ADIÇÕES DE TEXTO ---------------- */
+        
+            header section#topo div#info-menu span:after {
+                display: block;
+                content: "Como funciona";
+            }
+
+            header section#topo div#login-menu span:after{
+                display: block;
+                content: "Nome Sobrenome";
+            }
+
+        /* ------------- FIM DA ADIÇÃO DE TEXTO -------------- */
+    
+    }
+
+    @media(min-width:1050px){
+
+        header section#topo div#whats{ /* FAZ APARECER AS INFORMAÇÕES DO WHATSAPP */
+            display: flex;
+            flex: 1.2;
+            justify-content: center;
+        }
+
+        header section#topo div#whats div span,
+        header section#topo div#whats div span.complemento{
+            display: block;
+            margin: 0;
+        }
+
+        header section#topo div#whats div span.complemento{
+            font-size: 11pt;
+            font-weight: normal;
+        }
+
+        header section#topo > div#logo{
+            justify-content: left;
+        }
+
+    }
+
+    @media(min-width:1000px){
+        
+        nav.invisivel-desk{
+            display: none;
+        }
+
+        nav.visivel-desk{
+            display:flex;
+        }
+        
+    }
+    
+    /* ---------- FIM MIN WIDTH -------- */
+
+    /* ------------ MAX WIDHT --------- */
+
+    @media(max-width:900px){
+
+        main section#caminho-user ul li:first-of-type a{
+            display: flex;
+        }
+        main section#caminho-user ul li:first-of-type a:before{
+            width: 25px;
+            content: url("../assets/imgs/flecha-esquerda.png");
+        }
+        main section#caminho-user ul li:first-of-type a:after{
+            content: "Minha conta";
+        }
+        a span{
+            display: none;
+        }
+        .visivel-mobile{
+            display: inline;
+        }
+
+    }
+
+    @media (max-width:650px) {
+
+        section#selecao-semestre button{
+            display: block;
+            width: 100%;
+            height: 65px;
+            padding: 20px;
+            font-size: 18.5px;
+        }
+
+        section#selecao-semestre div button:first-of-type{
+            border-radius: 8px 8px 0 0;
+        }
+
+        section#selecao-semestre div button:last-of-type{
+            border-radius: 0 0 8px 8px
+        }
+
+    }
+
+    @media (max-width:1150px) {
+        
+        footer .invisivel-mobile {
+            display: none;
+        }
+
+        footer section#contatos ul{
+            flex-wrap: wrap;
+            margin: 0;
+            text-align: center;
+        }
+        
+        footer section#contatos ul li{
+            display: block;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer section#contatos ul li img {
+            margin-right: 0px;
+        }
+
+        footer section#contatos ul li#cxwhats-mobile{
+            display: flex;
+            justify-content: center;
+            text-align: left;
+            flex: auto;
+            width: 100%;
+            border-bottom: 3px solid #18ACC4;
+        }
+
+        footer section#contatos ul li#cxwhats-mobile img{
+            margin-right: 15px;
+        }
+
+        footer section#contatos ul li#cx-email {
+            border-left: 3px solid #18ACC4;
+            border-right: 3px solid #18ACC4;
+        }
+
+        footer h2:first-letter{
+            text-transform: uppercase;
+        }
+
+        /* ---------------- ADIÇÃO DE TEXTO ---------------- */
+
+            footer h2#numero + p::after{
+                content: "Segunda a sexta de 8h às 22h";
+            }
+
+        /* --------------- FIM ADIÇÃO DE TEXTO ------------- */
+
+    }
+    
+    /* --------- FIM MAX WIDHT -------- */

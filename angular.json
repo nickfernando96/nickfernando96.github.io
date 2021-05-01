@@ -26,7 +26,9 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -119,6 +121,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "QueroBolsaTest"
+    }
+  },
+  "defaultProject": "QueroBolsaTest",
+  "cli": {
+    "analytics": "23cec462-948c-46fa-a74c-6bf2a3f73c72"
+  }
 }
