@@ -6,7 +6,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Introduction
 
 >* This project was developed for challenge Quero Educação.
->* This's the front-end of project.
 >* The project was made using HTML, CSS, JavaScript, TypeScript, jQuery.
 
 ## Execution
@@ -17,8 +16,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Installation
 
 >* First, clone this repository or download
->* Install all dependencies using 'npm install --dev' and 'npm install'
+>* Install all dependencies using `npm install --dev` and `npm install`
 >* To run, execute the command `ng serve`
+>* Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+>* Archive db.json are located in `/src/assets/db/`
 
 ## Good Programming Practices
 
